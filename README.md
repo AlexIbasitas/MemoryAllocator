@@ -5,41 +5,18 @@ ABOUT
 This is a memory allocator that allows a user to allocate memory, free memory, and peek into the current state of the heap. 
 
 HOW TO USE
+    Compile the program with the command 'gcc -g MemoryAllocator.c -o MemoryAllocator'
+    Run the executable with './MemoryAllocator'
+    You may optionally run './MemoryAllocator FirstFit' or './MemoryAllocator BestFit' which specifies the algorithm in which free blocks will be allocated.
 
-INDEX CREATION
-
-    Download the DEV folder to the project folder
-    source venv/bin/activate
-    python3 invertedIndex.py
-    This will create files "docHash.json", "offsets.json", and "index.txt" (as well as numerous fragment*.txt files) which should automatically be used by the query search programs based on filename
-
-QUERY SEARCH
-
-    Text Interface:
-
-        source venv/bin/activate
-        python3 gui.py
-        type a query and press enter to search
-        type "quit()" to end
-        
-    Local GUI (Tkinter):
-
-        source venv/bin/activate
-        python3 textGui.py
-        type a query in the search box
-        press search
-        type "quit()" to end
-        
-    Web GUI (Flask):
+COMMANDS
+    'malloc <size>' which allocates a block of memory where size is the amount of bytes for the payload.
+    'free <index>' which frees a block of memory at the start of the payload.
+    'blocklist' which prints out all free/allocated blocks in memory in the format 'payload_size'-'start_of_payload'-'allocation-status'.
+    'writemem <index> <data> which writes characters into memory at the specified index.
+    'printmem <index> <num_to_print> which prints segments of memory beginning at the specified index.
+    'quit' to quit the program
     
-        source venv/bin/activate
-        type into root directory: flask run
-        go to link provided by flask (typically localhost 5000)
-        type query in search box
-        press submit
-        new page will contain links along with the ability to continue to search for more
-        
-
 
 
 
